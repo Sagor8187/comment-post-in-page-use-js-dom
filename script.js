@@ -5,10 +5,18 @@ let btn = document.getElementById("post-btn")
 
 btn.addEventListener("click",()=>{
     let data = posts.value
+
+    if(data !== ""){
+        let newpost = document.createElement("p")
+        newpost.classList.add("text")
+        newpost.innerText = data
+        sections.appendChild(newpost)
+        
+
+        posts.value = ""
+    }else{
+        alert("please add your comment")
+    }
+
     
-    let newpost = document.createElement("p")
-    newpost.classList.add("text")
-    newpost.innerText = data
-    sections.appendChild(newpost)
-    posts.value = ""
 })
